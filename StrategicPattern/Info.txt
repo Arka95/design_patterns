@@ -1,0 +1,7 @@
+WHY STRATEGIC DESIGN IS IMPORTANT:
+
+suppose you have a movie hall and it has findSeatAndBookTicket() fn whih applies different strategies in 
+finding seat based on MovieHall(conf) constructor's conf. Instead of adding boilerplates like multiple 
+confditional statements in the Class, better to have multiple fundtional classes assocuited with it, each
+overriding the  findSeatAndBookTicket() function. Then runtime polymorphism will determine which function class'
+method is invoked, instead of adding multiple if conditions

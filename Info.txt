@@ -1,0 +1,20 @@
+WHY PUBLIC CLASSES ARE KEPT IN OWN JAVA FILES :
+
+
+To get more clear picture let's imagine there are two public classes public class A and public class B 
+in a same source file and A class have reference to the not yet compiled class B. And we are compiling
+(compiling-linking-loading) class A now while linking to class B compiler will be forced to examine 
+each *.java files within the current package because class B don’t have it’s specific B.java file. So In
+above case, it is a little bit time consuming for the compiler to find which class lies under which 
+source file and in which class the main method lies. So the reason behind keeping one public class per 
+source file is to actually make compilation process faster because it enables a more efficient lookup of
+the source and compiled files during linking (import statements). The idea is if you know the name of a
+class, you know where it should be found for each classpath entry and no indexing will be required.
+
+And also as soon as we execute our application JVM by default looks for the public class (since no 
+restrictions and can be accessible from anywhere) and also looks for public static void main(String args[])
+in that public class. Public class acts as the initial class from where the JVM instance for the Java 
+application (program) is begun. So when we provide more than one public class in a program the compiler 
+itself stops you by throwing an error. This is because later we can’t confuse the JVM as to which class to 
+be its initial class because only one public class with the public static void main(String args[]) is the 
+initial class for JVM.
