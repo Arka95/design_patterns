@@ -1,0 +1,6 @@
+WHY FLYWEIGHT DESIGN IS IMPORTANT:
+
+`lift the load only when you need to.`
+
+No point in loading the copies of the same object when just a ref does the trick. useful in  battle simuation games!
+if its just a single object with multipleconcurent states, initialize a singleton and keep the state separate.
